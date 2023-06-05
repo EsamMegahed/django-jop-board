@@ -16,6 +16,11 @@ class Category(models.Model):
         return self.name
 
 
+def image_Upload(instance, filename):
+    image_name, extenion = filename.split(".")
+    return "jobs/%s.%s" % (instance.id, extenion)
+
+
 class Job(models.Model):
     title = models.CharField(max_length=100)
     # location =
@@ -26,6 +31,7 @@ class Job(models.Model):
     salary = models.IntegerField(default=0)
     experiences = models.IntegerField(default=1)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    image = models.ImageField(upload_to="jobs/", null=True)
 
     def __str__(self) -> str:
         return self.title

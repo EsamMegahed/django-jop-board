@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     # My Apps
     "job",
     "bootstrap4",
+    "django_filters",
+    "contact",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -124,7 +127,6 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    "/var/www/static/",
 ]
 
 # MEDIA URL
@@ -135,3 +137,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Email Setting
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "ahmedali34366@gmail.com"
+EMAIL_HOST_PASSWORD = "rxnnwbsoxmpdchoo"
+EMAIL_USE_TLS = True
+EMAIL_PORT = "587"

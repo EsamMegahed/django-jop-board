@@ -13,7 +13,6 @@ def send_massage(request):
         subject = request.POST["subject"]
         email = request.POST["email"]
         message = request.POST["message"]
-
         send_mail(
             subject,
             message,
